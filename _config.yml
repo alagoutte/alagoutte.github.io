@@ -5,6 +5,11 @@ remote_theme: jekyll/minima
 
 title: Mon Blog (Alexis La Goutte)
 description: Mon blog sous github pages
-twitter_username: alagoutte
-github_username: alagoutte
-linkedin_username: alagoutte
+minima:
+  social_links:
+    - { platform: github, user_url: "https://github.com/alagoutte" }
+    - {
+        platform: linkedin,
+        user_url: "https://www.linkedin.com/in/alexis-lagoutte",
+      }
+    - { platform: x, user_url: "https://x.com/alagoutte" }
