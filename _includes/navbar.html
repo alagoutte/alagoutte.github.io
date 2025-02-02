@@ -1,0 +1,47 @@
+<nav class="navbar">
+    <ul>
+        <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">À propos</a></li>
+    </ul>
+    <div class="social-links">
+        <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">🐦 X (Twitter)</a> |
+        <a href="https://github.com/{{ site.github_username }}" target="_blank">🐙 GitHub</a> |
+        <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank">💼</a>
+    </div>
+</nav>
+
+<style>
+    .navbar {
+        background: #333;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 0 15px;
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .navbar a:hover {
+        text-decoration: underline;
+    }
+
+    .social-links a {
+        margin-left: 10px;
+        font-size: 20px;
+    }
+</style>
