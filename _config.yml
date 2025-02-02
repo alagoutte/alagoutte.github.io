@@ -1,4 +1,8 @@
-theme: minima
+plugins:
+  - jekyll-remote-theme
+
+remote_theme: jekyll/minima
+
 title: Mon Blog (Alexis La Goutte)
 description: Mon blog sous github pages
 twitter_username: alagoutte
