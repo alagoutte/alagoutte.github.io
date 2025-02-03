@@ -24,6 +24,7 @@ je partage ici mes connaissances sur l'analyse réseau et l'infrastructure moder
 
 ## Me suivre  
 
+🦋 [Bluesky](https://bsky.app/profile/alagoutte.bsky.social)  
 📌 [GitHub](https://github.com/alagoutte)  
 🐦 [Twitter](https://twitter.com/alagoutte)  
 💼 [LinkedIn](https://linkedin.com/in/alexis-lagoutte)  
