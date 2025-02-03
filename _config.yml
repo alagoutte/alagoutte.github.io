@@ -3,8 +3,9 @@ plugins:
 
 remote_theme: jekyll/minima
 
-title: Mon Blog (Alexis La Goutte)
-description: Mon blog sous github pages
+title: blog.mouais.net
+description: Blog d'un passionné des réseaux !
+
 minima:
   social_links:
     - { platform: github, user_url: "https://github.com/alagoutte" }
