@@ -1,11 +1,10 @@
 ---
-title: "[NSX Intelligence] Problème lors du déploiement de NSX Application Platform (NAPP)"
+title: "[NSX Intelligence] Problème lors du déploiement de NSX Application Platform (NAPP) sous RKE2"
 date: 2025-02-11
-categories: NAPP RKE2
 tags: NSX-Intelligence NAPP RKE2 Kubernetes VMware
 ---
 
-Lors d’une nouvelle installation de **NSX Intelligence** (ou plutôt **Security Intelligence**), j’ai rencontré un petit problème inattendu !
+Lors d’une nouvelle installation de **NSX Intelligence** (ou plutôt **Security Intelligence** maintenant), j’ai rencontré un petit problème inattendu !
 
 ## 🚨 Blocage lors des pré-checks de NAPP
 
