@@ -5,6 +5,7 @@ remote_theme: jekyll/minima
 
 title: blog.mouais.net
 description: Blog d'un passionné des réseaux !
+url: "https://blog.mouais.net"
 
 minima:
   social_links:
