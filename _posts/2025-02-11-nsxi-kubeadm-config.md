@@ -20,7 +20,13 @@ Check Kubernetes cluster dns domain : Failed (1 Issue)
 
 et quand on regarde dans les détails :
 
+```bash
+Precheck execution failed, Please contact Administrator
+```
+
 ![Détail de l'erreur....](/assets/nsxi-kubeadm-config/napp_precheck_dns_error_full.png)  
+
+Zut c'est moi l'administrateur...
 
 ## 🎯 Hypothèse initiale : Un problème de DNS ❌
 
@@ -30,18 +36,20 @@ Après quelques recherches sur Google… rien de concluant !
 
 Direction les logs de **NAPP** sur le **NSX Manager** :
 
-📂 **Fichier à examiner :** `/var/log/proton/napps.log`
+L'ensemble des logs concernant l'installation de NAPP est situé `/var/log/proton/napps.log`
 
-Commande à exécuter pour vérifier les pré-checks dans les logs :
+On investige dans le fichier....
 
 ```bash
     cat /var/log/proton/napps.log 
 
+    [...]
     2024-09-30 13:41:49,906 INFO nsx_kubernetes_lib.vmware.kubernetes.service.kubectl.kubectl_117_service[331]:get_cluster_dns_domain Getting cluster dns domain
     2024-09-30 13:41:49,906 INFO nsx_kubernetes_lib.vmware.kubernetes.service.kubectl.kubectl_117_service[350]:execute Executing command kubectl get configmap kubeadm-config -n kube-system -o yaml --kubeconfig=/config/vmware/napps/.kube/config
     2024-09-30 13:41:49,906 INFO nsx_kubernetes_lib.vmware.kubernetes.common.utility[23]:execute ['kubectl', 'get', 'configmap', 'kubeadm-config', '-n', 'kube-system', '-o', 'yaml', '--kubeconfig=/config/vmware/napps/.kube/config']
     2024-09-30 13:41:49,956 ERROR nsx_kubernetes_lib.vmware.kubernetes.common.utility[57]:execute Error executing command 'kubectl get configmap kubeadm-config -n kube-system -o yaml --kubeconfig=/config/vmware/napps/.kube/config',  'Error from server (NotFound): configmaps "kubeadm-config" not found\n'
     2024-09-30 13:41:49,956 ERROR __main__[76]:main Error executing function get_cluster_dns_domain. Error message: Error from server (NotFound): configmaps "kubeadm-config" not found\n
+    [...]
 ```
 
 En creusant un peu, j’ai trouvé que le **pré-check vérifie que le domaine interne est bien `cluster.local`** (c’est sous-entendu dans la [doc…](https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/vdefend/vmware-nsx-application-platform/4-2/deploying-and-managing-the-nsx-application-platform/deploying-the-nsx-application-platform/configuring-your-environment-for-manual-deployment/manual-deployment-requirements.html) 🙃).
@@ -60,7 +68,7 @@ Dans cette installation, un **cluster Kubernetes sous Rancher RKE2 (1.29…)** a
 
 Le client disposait déjà d’autres clusters sous Rancher, et comme souvent, la **compatibilité avec NAPP est limitée**… et la [doc de VMware](https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/vdefend/vmware-nsx-application-platform/4-2/deploying-and-managing-the-nsx-application-platform/deployment-requirements-for-napp/nsx-application-platform-deployment-prerequisites.html) devient de moins en moins précise sur ce sujet.
 
-![La Documentation VMware sur les clusters K8S supportés](assets/nsxi-kubeadm-config/napp_broadcom_doc_k8s.png)  
+![La Documentation VMware sur les clusters K8S supportés](/assets/nsxi-kubeadm-config/napp_broadcom_doc_k8s.png)  
 
 ## ✅ Solution trouvée
 
