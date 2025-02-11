@@ -8,6 +8,7 @@ description: Blog d'un passionné des réseaux !
 url: "https://blog.mouais.net"
 
 minima:
+  show_excerpts: true
   social_links:
     - { platform: github, user_url: "https://github.com/alagoutte" }
     - {
