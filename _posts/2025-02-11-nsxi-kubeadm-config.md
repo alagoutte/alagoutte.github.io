@@ -1,7 +1,7 @@
 ---
 title: "[NSX Intelligence] Problème lors du déploiement de NSX Application Platform (NAPP)"
 date: 2025-02-11
-categories: NSX Kubernetes Sécurité
+categories: NAPP RKE2
 tags: NSX-Intelligence NAPP RKE2 Kubernetes VMware
 ---
 
