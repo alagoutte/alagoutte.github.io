@@ -5,8 +5,6 @@ categories: NSX Kubernetes Sécurité
 tags: NSX-Intelligence NAPP RKE2 Kubernetes VMware
 ---
 
-# 🛠️ [NSX Intelligence] Problème lors du déploiement de NSX Application Platform (NAPP)
-
 Lors d’une nouvelle installation de **NSX Intelligence** (ou plutôt **Security Intelligence**), j’ai rencontré un petit problème inattendu !
 
 ## 🚨 Blocage lors des pré-checks de NAPP
@@ -18,11 +16,11 @@ J’obtenais le message d’erreur suivant :
 ```bash
 Check Kubernetes cluster dns domain : Failed (1 Issue)
 ```
-![La Documentation VMware sur les clusters K8S supportés ](assets/nsxi-kubeadm-config/napp_precheck_dns_error.png)  
+![Erreur Precheck Cluster DNS Domain]({{ site.baseurl }}assets/nsxi-kubeadm-config/napp_precheck_dns_error.png)  
 
 et quand on regarde dans les détails :
 
-![La Documentation VMware sur les clusters K8S supportés ](assets/nsxi-kubeadm-config/napp_precheck_dns_error_full.png)  
+![Détail de l'erreur....]({{ site.baseurl }}assets/nsxi-kubeadm-config/napp_precheck_dns_error_full.png)  
 
 ## 🎯 Hypothèse initiale : Un problème de DNS ❌
 
@@ -62,7 +60,7 @@ Dans cette installation, un **cluster Kubernetes sous Rancher RKE2 (1.29…)** a
 
 Le client disposait déjà d’autres clusters sous Rancher, et comme souvent, la **compatibilité avec NAPP est limitée**… et la [doc de VMware](https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/vdefend/vmware-nsx-application-platform/4-2/deploying-and-managing-the-nsx-application-platform/deployment-requirements-for-napp/nsx-application-platform-deployment-prerequisites.html) devient de moins en moins précise sur ce sujet.
 
-![La Documentation VMware sur les clusters K8S supportés ](assets/nsxi-kubeadm-config/napp_broadcom_doc_k8s.png)  
+![La Documentation VMware sur les clusters K8S supportés]({{ site.baseurl }}assets/nsxi-kubeadm-config/napp_broadcom_doc_k8s.png)  
 
 ## ✅ Solution trouvée
 
@@ -103,4 +101,4 @@ Si vous utilisez Rancher RKE2 avec **NSX Application Platform (NAPP)**, pensez �
 
 🔧 **Bonus** : Il serait intéressant que VMware améliore la compatibilité avec Rancher, ou au moins documente mieux cette contrainte…
 
-💬 **Et vous, avez-vous rencontré ce genre de souci ? ** 😊
+💬 **Et vous, avez-vous rencontré ce genre de souci ?** 😊
