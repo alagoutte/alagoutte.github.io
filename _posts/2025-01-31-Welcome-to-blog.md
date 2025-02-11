@@ -12,6 +12,7 @@ Après une année 2024 trop calme (beaucoup de brouillons… mais aucune publica
 ## Un nouveau moteur de blog 🛠️
 
 J’ai décidé de passer à un nouveau moteur de blog plus orienté **GitOps**, et pour l’occasion, j’ai ressorti un vieux nom de domaine que j’avais sous la main !
+Il tourne sous [Jekyll](https://jekyllrb.com/) hebergé sous [GitHub (Pages)](https://github.com/alagoutte/alagoutte.github.io/)
 
 ## Les sujets abordés 📚
 
