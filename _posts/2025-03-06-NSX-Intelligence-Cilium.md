@@ -28,7 +28,7 @@ Regardons donc ce qui se passe…
 
 Aïe, il y a des **DROP** !
 
-### Première découverte 💡
+### 💡 Première découverte 
 
 Lors de son installation, **NSX Intelligence déploie aussi des Network Policies** ! C’est top... (une grosse cinquantaine quand même !)
 
@@ -60,15 +60,16 @@ druid-middle-manager-client-egress                    druid-middleManager-client
 druid-router                                          app=druid,component=router,release=nsxi-platform                                                                                     32d
 druid-router-client-egress                            druid-router-client=true                                                                                                             32d
 egress-networkpolicy                                  allow-traffic-to-nsx=true                                                                                                            32d
+[....]
 ```
 
 Par contre, ça bloque.
 
-### Vérification des Network Policies
+### 👮 Vérification des Network Policies
 
 Elles me paraissent normales...
 ```bash
-kubectl describe networkpolicies.networking.k8s.io minio  -n nsxi-platform
+kubectl describe networkpolicies.networking.k8s.io minio -n nsxi-platform
 Name:         minio
 Namespace:    nsxi-platform
 Created on:   2025-01-30 11:59:45 +0100 CET
@@ -96,7 +97,7 @@ Spec:
 
 ou encore au format yaml
 ```bash
-kubectl get networkpolicies.networking.k8s.io minio  -n nsxi-platform -o yaml
+kubectl get networkpolicies.networking.k8s.io minio -n nsxi-platform -o yaml
 ```
 
 ```yaml
@@ -189,7 +190,7 @@ J'aurai pu fusionné les 2 policies mais j'ai voulu verifier si j'avais pas le s
 
 Mon deploiement NSX Application Platform est maintenant fonctionnel !
 
-## C'est quoi le probleme au final ?
+## 🚨 C'est quoi le probleme au final ?
 
 Revenons à notre problème…
 
@@ -236,7 +237,7 @@ J’ai fini par trouver la cause du problème. C’est une [**limitation connue*
 
 (D’un côté, c’est presque logique…)
 
-## Vérification avec Cilium
+## ✅ Vérification avec Cilium
 
 Pour vérifier cela, on peut utiliser la commande suivante (Merci l’IA 🤖) qui permet de lister l’ensemble des named ports avec leur port :
 
