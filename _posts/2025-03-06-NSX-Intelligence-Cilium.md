@@ -5,8 +5,6 @@ date: 2025-03-06 12:55:00 -0000
 tags: NSX-Intelligence NAPP Cilium Kubernetes VMware
 ---
 
-# Problème rencontré avec NSX Intelligence et la CNI Cilium
-
 Un autre souci rencontré avec NSX Intelligence, et plus précisément avec la CNI Cilium.
 
 En effet, [la documentation de NSX Intelligence](https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-2/deployment-guide/nsx-application-platform-overview/nsx-application-platform-deployment-prerequisites.html) ne précise que les CNI suivantes :
@@ -26,7 +24,7 @@ Pendant l’installation de NSX Platform, j’étais en train d’installer les 
 
 Regardons donc ce qui se passe…
 
-[Hubble Drop](/assets/nsxi-cilium/nsxi_cilium_drop.png)
+![Hubble Drop](/assets/nsxi-cilium/nsxi_cilium_drop.png)
 
 Aïe, il y a des **DROP** !
 
